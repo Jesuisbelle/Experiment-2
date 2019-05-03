@@ -1,0 +1,18 @@
+//Create a program that will generate the multiplication table (up to x10) of a number. 
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main()
+{
+	int n;
+	cout << "Enter a number:";
+	cin >> n;
+	cout << "Multiplication table" << endl;
+	for (int i = 1; i <= 10; ++i) {
+		cout << n << " * " << i << " = " << n * i << endl;
+	}
+	_getch();
+	return 0;
+}
