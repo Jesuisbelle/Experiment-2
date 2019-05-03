@@ -1,0 +1,62 @@
+//Write a program that calculates a customer’s monthly bill. It should ask which package the customer has
+//purchased and how many hours were used. It should then display the total amount due.
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main() 
+{
+	char package;
+    double hours, due;
+	cout << "Welcome customer!" << endl;
+    cout << "How many hours of internet did you use this month? ";
+		cin >> hours;
+	cout << "Package A: For P995/mo 10 hrs of access are provided. Additional hours are P20/hr." << endl;
+	cout << "Package B: For P1495/mo 20 hrs of access are provided. Additional hours are P10/hr." << endl;
+	cout << "Package C: For P1995/mo of unlimited access is provided." << endl;
+	cout << "Please select a subscription package (A, B, or C): ";
+		cin >> package;
+	if (hours > 0 && hours < 744)
+	{
+		switch (package)
+		{
+		case 'a':
+		case 'A':
+			if (hours > 10)
+			{
+				due = (hours - 10) * 2 + 995;
+				cout << "Total for the month: P" << due << endl;
+			}
+			else if (hours < 10)
+			{
+				cout << "Total for the month: P995";
+			}
+			break;
+		case 'b':
+		case 'B':
+			if (hours >= 20)
+			{
+				due = (hours - 20) + 1495;
+				cout << "Total for the month: P" << due << endl;
+			}
+			else if (hours < 20)
+            {
+				cout << "Total for the month: P1495";
+            }
+			break;
+		case 'c':
+		case 'C':
+			due = 1995;
+			cout << "Total for the month: P1995" << endl;
+			break;
+		}
+	}
+	else if (hours < 0 || hours > 744)
+	{
+		cout << "Sorry please enter a valid number!";
+	}
+	cout << "Thank you for choosing our Internet service provider!" << endl;
+	_getch();
+	return 0;
+}
