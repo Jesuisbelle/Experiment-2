@@ -26,5 +26,5 @@ int main()
 		cout << "The LARGEST of the three numbers is " << n3;
 	}
 	_getch();
-  return 0;
+	return 0;
 }
