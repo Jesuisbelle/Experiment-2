@@ -1,0 +1,33 @@
+//Write a program that computes a customer’s water bill. The bill includes a P35 water demand
+//charge plus a consumption (use) charge of P1.10 for every gallon used. Consumption is figured from meter
+//readings in gallons taken recently and during the previous month. If the customer’s unpaid balance is
+//greater than 0, a P20 late charge is assessed as well.
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main()
+{
+	double water, unpaid, lst, charge; 
+	charge = 1.10;
+	cout << "Welcome to your water service's bill calculator!" << endl;
+	cout << "Gallons of Water Consumed Last Month: ";
+	cin >> lst;  
+	cout << "\n";
+	cout << "Gallons of Water Consumed Recently: ";
+		cin >> water;
+	cout << "\n"; 
+	cout << "Unpaid Balance: ";
+		cin >> unpaid;
+	cout << "\n"; 
+		if (unpaid > 0)
+			cout << "Next month's expected balance is " << 
+			35 + 20 + unpaid + (charge*(water)) << " P" << endl;
+		else if (unpaid <= 0)
+			cout << "Next month's expected balance is " << 
+			35 + (charge*(water)) << " P" << endl;
+	cout << "Thank you for selecting our services! See you next time!" << endl;
+	_getch();
+    return 0;
+}
